@@ -1,0 +1,1269 @@
+[
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-ITpXEGAy button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "action-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Compare symbols",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "1 day",
+        "role": null,
+        "id": "",
+        "className": "menuBtn-U9b0TAs4 button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Candles",
+        "role": null,
+        "id": "",
+        "className": "menu-hDtIoxjU button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Indicators, metrics, and strategies",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Indicator templates",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Create alert",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Bar replay",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Layout setup",
+        "role": null,
+        "id": "",
+        "className": "button-PVLxKhII button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Save all charts for all symbols and intervals on your layout",
+        "role": null,
+        "id": "",
+        "className": "button-zapLh0rR buttonSmallPadding-zapLh0rR button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye button-w_gDKn7O apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Manage layouts",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Quick search",
+        "role": null,
+        "id": "",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Settings",
+        "role": null,
+        "id": "",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Fullscreen mode",
+        "role": null,
+        "id": "",
+        "className": "button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Take a snapshot",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "  ",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "activeArea-FO6FKsU5 noStretch-FO6FKsU5 hasClickListener-FO6FKsU5"
+    },
+    {
+        "text": "Publish",
+        "ariaLabel": "Share your idea with the trade community",
+        "role": null,
+        "id": "",
+        "className": "menuWrap-Skeghfoq accessible-Skeghfoq button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "action-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Compare symbols",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "1 day",
+        "role": null,
+        "id": "",
+        "className": "menuBtn-U9b0TAs4 button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Candles",
+        "role": null,
+        "id": "",
+        "className": "menu-hDtIoxjU button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Indicators, metrics, and strategies",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Indicator templates",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Create alert",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Bar replay",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Layout setup",
+        "role": null,
+        "id": "",
+        "className": "button-PVLxKhII button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Save all charts for all symbols and intervals on your layout",
+        "role": null,
+        "id": "",
+        "className": "button-zapLh0rR buttonSmallPadding-zapLh0rR button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye button-w_gDKn7O apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Manage layouts",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Quick search",
+        "role": null,
+        "id": "",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Settings",
+        "role": null,
+        "id": "",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Fullscreen mode",
+        "role": null,
+        "id": "",
+        "className": "button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Take a snapshot",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "  ",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "activeArea-FO6FKsU5 noStretch-FO6FKsU5 hasClickListener-FO6FKsU5"
+    },
+    {
+        "text": "Publish",
+        "ariaLabel": "Share your idea with the trade community",
+        "role": null,
+        "id": "",
+        "className": "menuWrap-Skeghfoq accessible-Skeghfoq button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "XAUUSD",
+        "ariaLabel": null,
+        "role": null,
+        "id": "header-toolbar-symbol-search",
+        "className": "button-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "header-toolbar-switch-data-type",
+        "className": "action-JQZ0HKD4 apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Compare symbols",
+        "role": null,
+        "id": "header-toolbar-compare",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withoutText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "D",
+        "ariaLabel": "1 day",
+        "role": null,
+        "id": "",
+        "className": "menuBtn-U9b0TAs4 button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Candles",
+        "role": null,
+        "id": "",
+        "className": "menu-hDtIoxjU button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "Indicators",
+        "ariaLabel": "Indicators, metrics, and strategies",
+        "role": null,
+        "id": "",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Indicator templates",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "Alert",
+        "ariaLabel": "Create alert",
+        "role": null,
+        "id": "header-toolbar-alerts",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "Replay",
+        "ariaLabel": "Bar replay",
+        "role": null,
+        "id": "header-toolbar-replay",
+        "className": "button-dlFDN0Zd button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-HdKhcTye isDisabled-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Layout setup",
+        "role": null,
+        "id": "header-toolbar-layouts",
+        "className": "button-PVLxKhII button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "Save\nSave",
+        "ariaLabel": "Save all charts for all symbols and intervals on your layout",
+        "role": null,
+        "id": "header-toolbar-save-load",
+        "className": "button-zapLh0rR buttonSmallPadding-zapLh0rR button-I8rAnXTR withText-I8rAnXTR button-HdKhcTye button-w_gDKn7O apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Manage layouts",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Quick search",
+        "role": null,
+        "id": "header-toolbar-quick-search",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Settings",
+        "role": null,
+        "id": "header-toolbar-properties",
+        "className": "iconButton-dlFDN0Zd button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Fullscreen mode",
+        "role": null,
+        "id": "header-toolbar-fullscreen",
+        "className": "button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Take a snapshot",
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "  ",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "activeArea-FO6FKsU5 noStretch-FO6FKsU5 hasClickListener-FO6FKsU5"
+    },
+    {
+        "text": "Publish",
+        "ariaLabel": "Share your idea with the trade community",
+        "role": null,
+        "id": "",
+        "className": "menuWrap-Skeghfoq accessible-Skeghfoq button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "Trade",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "activeArea-FO6FKsU5 noStretch-FO6FKsU5 hasClickListener-FO6FKsU5"
+    },
+    {
+        "text": "Publish",
+        "ariaLabel": "Share your idea with the trade community",
+        "role": null,
+        "id": "",
+        "className": "menuWrap-Skeghfoq accessible-Skeghfoq button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Cross",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isActive-HdKhcTye isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Cursors",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Trendline",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Trend tools",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Fib retracement",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Gann and Fibonacci tools",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "XABCD pattern",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Patterns",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Long position",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Forecasting and measurement tools",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Brush",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Geometric shapes",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Text",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Annotation tools",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Icon",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Icons",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Measure",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Zoom in",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Magnet mode snaps drawings placed near price bars to the closest OHLC value",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Magnets",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Keep drawing",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Lock all drawings",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Hide all drawings",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Hide options",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Remove objects",
+        "role": null,
+        "id": "",
+        "className": "button-p8fS8x2Q button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Remove options",
+        "role": null,
+        "id": "",
+        "className": "arrow-vLxmOgZ3 apply-common-tooltip common-tooltip-vertical accessible-vLxmOgZ3"
+    },
+    {
+        "text": "Gold Spot / U.S. Dollar",
+        "ariaLabel": "Change symbol",
+        "role": null,
+        "id": "",
+        "className": "title-YTFIJ62h accessible-YTFIJ62h"
+    },
+    {
+        "text": "1D",
+        "ariaLabel": "Change interval",
+        "role": null,
+        "id": "",
+        "className": "title-YTFIJ62h accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Flag symbol",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h flag-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Symbol/interval chart syncing",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h blockHidden-LcYdo2N6 linking-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Hide",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h blockHidden-LcYdo2N6 eye-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "More",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "apply-common-tooltip common-tooltip-wide small-URIjEB98 small-URIjEB98"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Hide indicator legend",
+        "role": null,
+        "id": "",
+        "className": "toggler-YTFIJ62h pane-button-LcYdo2N6 apply-common-tooltip accessible-YTFIJ62h objectsTreeCanBeShown-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Hide",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h eye-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Show interval settings",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h blockHidden-LcYdo2N6 intervalEye-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Settings",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Remove",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "More",
+        "role": null,
+        "id": "",
+        "className": "button-YTFIJ62h apply-common-tooltip accessible-YTFIJ62h"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Toggle auto scale",
+        "role": null,
+        "id": "",
+        "className": "priceScaleModeButton-okRV4Kjm priceScaleModeButton_activated-okRV4Kjm priceScaleModeButtons__button-aaKX6K1a apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Toggle log scale",
+        "role": null,
+        "id": "",
+        "className": "priceScaleModeButton-okRV4Kjm priceScaleModeButtons__button-aaKX6K1a apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-ahFGGn5A dateRange-MzM01zOE button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "1D",
+        "ariaLabel": "1 day in 1 minute intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "5D",
+        "ariaLabel": "5 days in 5 minutes intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "1M",
+        "ariaLabel": "1 month in 30 minutes intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "3M",
+        "ariaLabel": "3 months in 1 hour intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "6M",
+        "ariaLabel": "6 months in 2 hours intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "YTD",
+        "ariaLabel": "Year to day in 1 day intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "1Y",
+        "ariaLabel": "1 year in 1 day intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "5Y",
+        "ariaLabel": "5 years in 1 week intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "All",
+        "ariaLabel": "All data in 1 month intervals",
+        "role": null,
+        "id": "",
+        "className": "item-JKh7dwEv button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Go to",
+        "role": null,
+        "id": "",
+        "className": "button-EPFqCReo button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "05:16:35 UTC",
+        "ariaLabel": "Timezone",
+        "role": null,
+        "id": "",
+        "className": "item-MzM01zOE button-HdKhcTye button-LJnoYsNG apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Watchlist, details, and news",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isActive-HdKhcTye isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Alerts",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Object tree and data window",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Screeners",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Pine",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Calendars",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Community",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Notifications",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Products",
+        "role": null,
+        "id": "",
+        "className": "button-r5xpxcDq common-tooltip-vertical button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Help Center",
+        "role": null,
+        "id": "",
+        "className": "button-gyumZMc1 button-HdKhcTye apply-common-tooltip common-tooltip-vertical isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "Watchlist",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-sXspZNnZ button-g115eYH4 apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Add symbol",
+        "role": null,
+        "id": "",
+        "className": "headerButton-mQBvegEO button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Advanced view",
+        "role": null,
+        "id": "",
+        "className": "headerButton-mQBvegEO button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Settings",
+        "role": null,
+        "id": "",
+        "className": "headerButton-mQBvegEO button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-D_3frAuZ accessible-D_3frAuZ"
+    },
+    {
+        "text": "Symbol",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "label-k67yvGbk sortable-k67yvGbk accessible-k67yvGbk"
+    },
+    {
+        "text": "Last",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "label-k67yvGbk sortable-k67yvGbk accessible-k67yvGbk"
+    },
+    {
+        "text": "Chg",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "label-k67yvGbk sortable-k67yvGbk accessible-k67yvGbk"
+    },
+    {
+        "text": "Chg%",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "label-k67yvGbk sortable-k67yvGbk accessible-k67yvGbk"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "wrap-pirXP_rc button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "More seasonals",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-be5gA13b"
+    },
+    {
+        "text": "More technicals",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "button-be5gA13b"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "menuButton-jogw41q5 button-sXspZNnZ apply-common-tooltip accessible-sXspZNnZ"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Open panel",
+        "role": null,
+        "id": "",
+        "className": "button-oZcHceXL firstButton-oZcHceXL button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": "Maximize panel",
+        "role": null,
+        "id": "",
+        "className": "button-oZcHceXL button-FDtiDbyj button-HdKhcTye apply-common-tooltip isInteractive-HdKhcTye accessible-HdKhcTye"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY withEndSlot-wc15_bxY"
+    },
+    {
+        "text": "",
+        "ariaLabel": null,
+        "role": null,
+        "id": "",
+        "className": "roundButton-wc15_bxY roundButtonColor-bvCKE8pJ gray-bvCKE8pJ quiet-primary-bvCKE8pJ xsmall-wc15_bxY iconOnly-wc15_bxY withEndSlot-wc15_bxY apply-common-tooltip"
+    }
+]
