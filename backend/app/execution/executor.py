@@ -1,196 +1,151 @@
 """
-AEGIS AI
-Paper Trading Engine
+AEGIS AI v3
+Master Execution Engine
 """
 
-from datetime import datetime
-from uuid import uuid4
+from __future__ import annotations
 
-from app.risk.manager import RiskManager
+from app.execution.paper_executor import PaperExecutor
 
 
-class PaperExecutor:
+class ExecutionEngine:
 
-    def __init__(self, starting_balance: float = 10000.0):
+    def __init__(
 
-        self.balance = starting_balance
-        self.equity = starting_balance
-
-        self.risk = RiskManager()
-
-        self.open_positions = []
-        self.closed_positions = []
-
-    # --------------------------------------------------
-
-    def buy(
         self,
-        symbol: str,
-        entry: float,
-        stop_loss: float,
-        take_profit: float,
+
+        mode="PAPER",
+
+        starting_balance=10000,
+
     ):
 
-        sl_pips = abs(entry - stop_loss) * 10000
+        self.mode = mode.upper()
 
-        lot = self.risk.calculate_lot_size(
-            self.balance,
-            sl_pips,
-        )
+        if self.mode == "PAPER":
 
-        if not self.risk.can_open_trade(
-            len(self.open_positions)
-        ):
-            raise Exception("Maximum open trades reached.")
+            self.executor = PaperExecutor(
 
-        trade = self._create_trade(
-            "BUY",
-            symbol,
-            lot,
-            entry,
-            stop_loss,
-            take_profit,
-        )
+                starting_balance
 
-        self.open_positions.append(trade)
-
-        return trade
-
-    # --------------------------------------------------
-
-    def sell(
-        self,
-        symbol: str,
-        entry: float,
-        stop_loss: float,
-        take_profit: float,
-    ):
-
-        sl_pips = abs(stop_loss - entry) * 10000
-
-        lot = self.risk.calculate_lot_size(
-            self.balance,
-            sl_pips,
-        )
-
-        if not self.risk.can_open_trade(
-            len(self.open_positions)
-        ):
-            raise Exception("Maximum open trades reached.")
-
-        trade = self._create_trade(
-            "SELL",
-            symbol,
-            lot,
-            entry,
-            stop_loss,
-            take_profit,
-        )
-
-        self.open_positions.append(trade)
-
-        return trade
-
-    # --------------------------------------------------
-
-    def close_trade(
-        self,
-        trade_id: str,
-        close_price: float,
-    ):
-
-        for trade in self.open_positions:
-
-            if trade["id"] != trade_id:
-                continue
-
-            pnl = self.calculate_pnl(
-                trade,
-                close_price,
             )
 
-            trade["close_price"] = close_price
-            trade["close_time"] = datetime.utcnow().isoformat()
-            trade["pnl"] = round(pnl, 2)
+        else:
 
-            self.balance += pnl
-            self.equity = self.balance
+            raise NotImplementedError(
 
-            self.closed_positions.append(trade)
+                "LIVE executor not implemented yet."
 
-            self.open_positions.remove(trade)
+            )
 
-            return trade
+    # =====================================================
+    # BUY
+    # =====================================================
 
-        return None
+    def buy(
 
-    # --------------------------------------------------
-
-    def calculate_pnl(
         self,
-        trade,
-        close_price,
+
+        **kwargs,
+
     ):
 
-        multiplier = 100000
+        return self.executor.buy(
 
-        if trade["type"] == "BUY":
+            **kwargs,
 
-            return (
-                close_price
-                - trade["entry"]
-            ) * multiplier * trade["lot"]
+        )
 
-        return (
-            trade["entry"]
-            - close_price
-        ) * multiplier * trade["lot"]
+    # =====================================================
+    # SELL
+    # =====================================================
 
-    # --------------------------------------------------
+    def sell(
 
-    def _create_trade(
         self,
-        trade_type,
-        symbol,
-        lot,
-        entry,
-        sl,
-        tp,
+
+        **kwargs,
+
     ):
 
-        return {
+        return self.executor.sell(
 
-            "id": str(uuid4()),
+            **kwargs,
 
-            "type": trade_type,
+        )
 
-            "symbol": symbol,
+    # =====================================================
+    # UPDATE
+    # =====================================================
 
-            "lot": lot,
+    def update(
 
-            "entry": entry,
+        self,
 
-            "sl": sl,
+        price,
 
-            "tp": tp,
+    ):
 
-            "time": datetime.utcnow().isoformat(),
-        }
+        return self.executor.update(
 
-    # --------------------------------------------------
+            price,
 
-    def get_balance(self):
+        )
 
-        return round(self.balance, 2)
+    # =====================================================
+    # CLOSE
+    # =====================================================
 
-    def get_equity(self):
+    def close(
 
-        return round(self.equity, 2)
+        self,
 
-    def get_open_positions(self):
+        trade_id,
 
-        return self.open_positions
+        price,
 
-    def get_closed_positions(self):
+    ):
 
-        return self.closed_positions
+        return self.executor.close_trade(
+
+            trade_id,
+
+            price,
+
+        )
+
+    # =====================================================
+    # BALANCE
+    # =====================================================
+
+    @property
+
+    def balance(self):
+
+        return self.executor.get_balance()
+
+    # =====================================================
+    # EQUITY
+    # =====================================================
+
+    @property
+
+    def equity(self):
+
+        return self.executor.get_equity()
+
+    # =====================================================
+    # STATS
+    # =====================================================
+
+    def statistics(self):
+
+        return self.executor.statistics()
+
+    # =====================================================
+    # RESET
+    # =====================================================
+
+    def reset(self):
+
+        self.executor.reset()

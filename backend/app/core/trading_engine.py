@@ -1,57 +1,89 @@
 """
-AEGIS AI
-Trading Engine
+AEGIS AI V3
+Central Trading Engine
 """
 
-from app.strategy.ema_crossover import EMACrossover
-from app.indicators.rsi import RSI
-from app.indicators.macd import MACD
-from app.ai.decision_engine import DecisionEngine
+from app.ai.ai_engine import AIEngine
 
 
 class TradingEngine:
 
     def __init__(self):
 
-        self.strategy = EMACrossover()
-        self.rsi = RSI()
-        self.macd = MACD()
-        self.ai = DecisionEngine()
+        self.ai = AIEngine()
 
-    def process(self, closes):
+    # ----------------------------------------------------
 
-        # Remove invalid values
-        closes = [c for c in closes if c is not None]
+    def process(
 
-        if len(closes) < 35:
+        self,
+
+        candles,
+
+    ):
+
+        """
+        Main trading pipeline.
+
+        Market
+            ↓
+        AI Engine
+            ↓
+        Trade Decision
+        """
+
+        if candles is None:
 
             return {
-                "action": "WAIT",
-                "reason": f"Need more candles ({len(closes)}/35)"
+
+                "status": "ERROR",
+
+                "reason": "No candle data.",
+
             }
 
-        signal = self.strategy.signal(closes)
-
-        rsi_value = self.rsi.calculate(closes)
-
-        macd_value = self.macd.calculate(closes)
-
-        if rsi_value is None or macd_value is None:
+        if len(candles) < 50:
 
             return {
-                "action": "WAIT",
-                "reason": "Indicators not ready"
+
+                "status": "WAIT",
+
+                "reason": f"Need 50 candles ({len(candles)}/50)",
+
             }
 
-        decision = self.ai.decide(
-            signal,
-            rsi_value,
-            macd_value,
+        return self.ai.process(
+
+            candles,
+
         )
 
-        return {
-            "signal": signal,
-            "rsi": rsi_value,
-            "macd": macd_value,
-            "decision": decision,
-        }
+    # ----------------------------------------------------
+
+    def health(
+
+        self,
+
+    ):
+
+        return self.ai.health()
+
+    # ----------------------------------------------------
+
+    def reset(
+
+        self,
+
+    ):
+
+        self.ai.reset()
+
+    # ----------------------------------------------------
+
+    def summary(
+
+        self,
+
+    ):
+
+        return self.ai.summary()

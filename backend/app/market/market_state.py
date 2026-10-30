@@ -5,7 +5,7 @@ Market State
 
 from collections import deque
 
-from app.market.candles import Candle
+from app.market.candle import Candle
 
 
 class MarketState:

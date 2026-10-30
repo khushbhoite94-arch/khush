@@ -1,6 +1,6 @@
 import time
 
-from app.market.candle import CandleBuilder
+from app.market.candle_builder import CandleBuilder
 
 builder = CandleBuilder()
 

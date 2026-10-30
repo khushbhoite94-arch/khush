@@ -1,0 +1,207 @@
+backend/app
+├── ai
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   └── decision_engine.cpython-314.pyc
+│   ├── confidence.py
+│   ├── decision.py
+│   ├── decision_engine.py
+│   ├── entry
+│   │   └── __init__.py
+│   ├── exit
+│   │   └── __init__.py
+│   ├── feature_store
+│   │   └── __init__.py
+│   ├── inference
+│   │   └── __init__.py
+│   ├── model_manager
+│   │   └── __init__.py
+│   ├── orchestrator.py
+│   ├── portfolio
+│   │   └── __init__.py
+│   ├── regime
+│   │   └── __init__.py
+│   ├── risk
+│   │   └── __init__.py
+│   ├── sentiment
+│   │   └── __init__.py
+│   ├── trainer
+│   │   └── __init__.py
+│   └── trend
+│       └── __init__.py
+├── analytics
+│   ├── __init__.py
+│   ├── exporter.py
+│   ├── journal.py
+│   ├── performance.py
+│   ├── reports.py
+│   └── statistics.py
+├── api
+│   ├── __init__.py
+│   ├── dependencies.py
+│   ├── middleware.py
+│   ├── routes
+│   │   ├── ai.py
+│   │   ├── analytics.py
+│   │   ├── browser.py
+│   │   ├── health.py
+│   │   ├── profiles.py
+│   │   ├── settings.py
+│   │   └── trading.py
+│   └── websocket.py
+├── automation
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── actions.cpython-314.pyc
+│   │   ├── browser.cpython-314.pyc
+│   │   ├── chart_reader.cpython-314.pyc
+│   │   ├── dom_inspector.cpython-314.pyc
+│   │   ├── inspect.cpython-314.pyc
+│   │   ├── live_reader.cpython-314.pyc
+│   │   ├── selectors.cpython-314.pyc
+│   │   └── tradingview.cpython-314.pyc
+│   ├── actions.py
+│   ├── browser.py
+│   ├── chart_reader.py
+│   ├── dom_inspector.py
+│   ├── inspect.py
+│   ├── live_reader.py
+│   ├── profile.py
+│   ├── recovery.py
+│   ├── screenshots.py
+│   ├── selectors.py
+│   ├── session.py
+│   ├── tradingview.py
+│   ├── validator.py
+│   └── watchdog.py
+├── config.py
+├── core
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── config.cpython-314.pyc
+│   │   ├── live_engine.cpython-314.pyc
+│   │   ├── logger.cpython-314.pyc
+│   │   └── trading_engine.cpython-314.pyc
+│   ├── bot.py
+│   ├── config.py
+│   ├── constants.py
+│   ├── event_bus.py
+│   ├── exceptions.py
+│   ├── live_engine.py
+│   ├── logger.py
+│   ├── scheduler.py
+│   ├── security.py
+│   ├── startup.py
+│   ├── state.py
+│   └── trading_engine.py
+├── database
+│   ├── __init__.py
+│   ├── collections.py
+│   ├── connection.py
+│   ├── indexes.py
+│   ├── models.py
+│   └── repositories
+│       └── __init__.py
+├── execution
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   └── paper_executor.cpython-314.pyc
+│   ├── break_even.py
+│   ├── executor.py
+│   ├── order_manager.py
+│   ├── paper_executor.py
+│   ├── partial_close.py
+│   ├── position_manager.py
+│   └── trailing_stop.py
+├── indicators
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── ema.cpython-314.pyc
+│   │   ├── macd.cpython-314.pyc
+│   │   └── rsi.cpython-314.pyc
+│   ├── atr.py
+│   ├── candlestick.py
+│   ├── ema.py
+│   ├── indicator_engine.py
+│   ├── macd.py
+│   ├── momentum.py
+│   ├── rsi.py
+│   ├── smart_money.py
+│   ├── trend.py
+│   ├── volatility.py
+│   └── volume.py
+├── learning
+│   ├── __init__.py
+│   ├── dataset_builder.py
+│   ├── evaluator.py
+│   ├── optimizer.py
+│   └── retrainer.py
+├── logger
+│   └── logger.py
+├── market
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── candle.cpython-314.pyc
+│   │   ├── candles.cpython-314.pyc
+│   │   ├── history.cpython-314.pyc
+│   │   ├── history_api.cpython-314.pyc
+│   │   ├── history_loader.cpython-314.pyc
+│   │   ├── market_state.cpython-314.pyc
+│   │   ├── market_stream.cpython-314.pyc
+│   │   └── ticks.cpython-314.pyc
+│   ├── candle.py
+│   ├── candles.py
+│   ├── history.py
+│   ├── history_api.py
+│   ├── history_loader.py
+│   ├── liquidity.py
+│   ├── market_state.py
+│   ├── market_stream.py
+│   ├── sessions.py
+│   ├── ticks.py
+│   └── volatility.py
+├── notifications
+│   ├── __init__.py
+│   ├── desktop.py
+│   ├── discord.py
+│   ├── email.py
+│   └── telegram.py
+├── risk
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── manager.cpython-314.pyc
+│   │   └── risk_manager.cpython-314.pyc
+│   ├── drawdown.py
+│   ├── exposure.py
+│   ├── lot_size.py
+│   ├── manager.py
+│   ├── margin.py
+│   ├── risk_manager.py
+│   └── validator.py
+├── services
+│   ├── ai_service.py
+│   ├── analytics_service.py
+│   ├── browser_service.py
+│   ├── profile_service.py
+│   └── trade_service.py
+├── strategy
+│   ├── __pycache__
+│   │   └── ema_crossover.cpython-314.pyc
+│   └── ema_crossover.py
+└── utils
+    ├── __init__.py
+    ├── decorators.py
+    ├── files.py
+    ├── helpers.py
+    ├── parser.py
+    ├── retry.py
+    └── time.py
+
+38 directories, 167 files

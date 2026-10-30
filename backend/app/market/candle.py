@@ -1,49 +1,69 @@
 """
 AEGIS AI
-Live Candle Builder
+Candle Model
 """
 
+from dataclasses import dataclass
 from datetime import datetime
 
 
-class CandleBuilder:
+@dataclass(slots=True)
+class Candle:
 
-    def __init__(self):
+    symbol: str
 
-        self.current = None
+    timeframe: str
 
-    def update(self, price):
+    timestamp: datetime
 
-        minute = datetime.utcnow().replace(second=0, microsecond=0)
+    open: float
 
-        if self.current is None:
+    high: float
 
-            self.current = {
-                "time": minute,
-                "open": price,
-                "high": price,
-                "low": price,
-                "close": price,
-            }
+    low: float
 
-            return None
+    close: float
 
-        if minute == self.current["time"]:
+    volume: float = 0.0
 
-            self.current["high"] = max(self.current["high"], price)
-            self.current["low"] = min(self.current["low"], price)
-            self.current["close"] = price
+    @property
+    def body(self):
 
-            return None
+        return abs(self.close - self.open)
 
-        finished = self.current.copy()
+    @property
+    def bullish(self):
 
-        self.current = {
-            "time": minute,
-            "open": price,
-            "high": price,
-            "low": price,
-            "close": price,
+        return self.close > self.open
+
+    @property
+    def bearish(self):
+
+        return self.close < self.open
+
+    @property
+    def range(self):
+
+        return self.high - self.low
+
+    def to_dict(self):
+
+        return {
+
+            "symbol": self.symbol,
+
+            "timeframe": self.timeframe,
+
+            "timestamp": self.timestamp.isoformat(),
+
+            "open": self.open,
+
+            "high": self.high,
+
+            "low": self.low,
+
+            "close": self.close,
+
+            "volume": self.volume,
+
         }
-
-        return finished

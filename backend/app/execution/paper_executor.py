@@ -1,177 +1,383 @@
 """
-AEGIS AI
+AEGIS AI v3
 Paper Trading Engine
 """
+
+from __future__ import annotations
 
 from datetime import datetime
 from uuid import uuid4
 
+from app.execution.position_manager import PositionManager
+from app.execution.break_even import BreakEven
+from app.execution.trailing_stop import TrailingStop
+from app.execution.partial_close import PartialClose
+
 
 class PaperExecutor:
 
-    def __init__(self, starting_balance: float = 10000.0):
+    def __init__(
+
+        self,
+
+        starting_balance: float = 10000.0,
+
+    ):
 
         self.balance = starting_balance
+
         self.equity = starting_balance
 
-        self.open_positions = []
-        self.closed_positions = []
+        self.positions = PositionManager()
 
-    # ---------------------------------------------------------
+        self.break_even = BreakEven()
 
-    def buy(
-        self,
-        symbol: str,
-        lot: float,
-        entry: float,
-        sl: float,
-        tp: float,
-    ):
+        self.trailing = TrailingStop(
 
-        trade = self._create_trade(
-            "BUY",
-            symbol,
-            lot,
-            entry,
-            sl,
-            tp,
+            distance=0.0010,
+
         )
 
-        self.open_positions.append(trade)
+        self.partial = PartialClose()
 
-        return trade
-
-    # ---------------------------------------------------------
-
-    def sell(
-        self,
-        symbol: str,
-        lot: float,
-        entry: float,
-        sl: float,
-        tp: float,
-    ):
-
-        trade = self._create_trade(
-            "SELL",
-            symbol,
-            lot,
-            entry,
-            sl,
-            tp,
-        )
-
-        self.open_positions.append(trade)
-
-        return trade
-
-    # ---------------------------------------------------------
-
-    def close_trade(
-        self,
-        trade_id: str,
-        close_price: float,
-    ):
-
-        for trade in self.open_positions:
-
-            if trade["id"] != trade_id:
-                continue
-
-            pnl = self.calculate_pnl(
-                trade,
-                close_price,
-            )
-
-            trade["close_price"] = close_price
-            trade["close_time"] = datetime.utcnow().isoformat()
-            trade["pnl"] = pnl
-
-            self.balance += pnl
-            self.equity = self.balance
-
-            self.closed_positions.append(trade)
-
-            self.open_positions.remove(trade)
-
-            return trade
-
-        return None
-
-    # ---------------------------------------------------------
-
-    def calculate_pnl(
-        self,
-        trade,
-        close_price: float,
-    ):
-
-        multiplier = 100000
-
-        if trade["type"] == "BUY":
-
-            return (
-                close_price
-                - trade["entry"]
-            ) * multiplier * trade["lot"]
-
-        return (
-            trade["entry"]
-            - close_price
-        ) * multiplier * trade["lot"]
-
-    # ---------------------------------------------------------
+    # =====================================================
+    # CREATE TRADE
+    # =====================================================
 
     def _create_trade(
+
         self,
-        trade_type,
+
+        direction,
+
         symbol,
+
         lot,
+
         entry,
+
         sl,
+
         tp,
+
     ):
 
         return {
 
             "id": str(uuid4()),
 
-            "type": trade_type,
+            "direction": direction,
 
             "symbol": symbol,
 
-            "lot": lot,
-
             "entry": entry,
 
-            "sl": sl,
+            "stop_loss": sl,
 
-            "tp": tp,
+            "take_profit": tp,
 
-            "time": datetime.utcnow().isoformat(),
+            "lot_size": lot,
+
+            "opened_at": datetime.utcnow(),
+
+            "status": "OPEN",
+
+            "profit": 0.0,
+
+            "breakeven": False,
+
+            "partial_closed": False,
+
         }
 
-    # ---------------------------------------------------------
+    # =====================================================
+    # BUY
+    # =====================================================
+
+    def buy(
+
+        self,
+
+        symbol,
+
+        lot,
+
+        entry,
+
+        sl,
+
+        tp,
+
+    ):
+
+        trade = self._create_trade(
+
+            "BUY",
+
+            symbol,
+
+            lot,
+
+            entry,
+
+            sl,
+
+            tp,
+
+        )
+
+        return self.positions.open(trade)
+
+    # =====================================================
+    # SELL
+    # =====================================================
+
+    def sell(
+
+        self,
+
+        symbol,
+
+        lot,
+
+        entry,
+
+        sl,
+
+        tp,
+
+    ):
+
+        trade = self._create_trade(
+
+            "SELL",
+
+            symbol,
+
+            lot,
+
+            entry,
+
+            sl,
+
+            tp,
+
+        )
+
+        return self.positions.open(trade)
+
+    # =====================================================
+    # UPDATE MARKET PRICE
+    # =====================================================
+
+    def update(
+
+        self,
+
+        current_price,
+
+    ):
+
+        finished = []
+
+        for trade in list(self.positions.open_positions):
+
+            self.break_even.apply(
+
+                trade,
+
+                current_price,
+
+            )
+
+            self.trailing.apply(
+
+                trade,
+
+                current_price,
+
+            )
+
+            if trade["direction"] == "BUY":
+
+                if current_price <= trade["stop_loss"]:
+
+                    closed = self.positions.close(
+
+                        trade["id"],
+
+                        trade["stop_loss"],
+
+                    )
+
+                elif current_price >= trade["take_profit"]:
+
+                    closed = self.positions.close(
+
+                        trade["id"],
+
+                        trade["take_profit"],
+
+                    )
+
+                else:
+
+                    continue
+
+            else:
+
+                if current_price >= trade["stop_loss"]:
+
+                    closed = self.positions.close(
+
+                        trade["id"],
+
+                        trade["stop_loss"],
+
+                    )
+
+                elif current_price <= trade["take_profit"]:
+
+                    closed = self.positions.close(
+
+                        trade["id"],
+
+                        trade["take_profit"],
+
+                    )
+
+                else:
+
+                    continue
+
+            pnl = closed["profit"] * 100000
+
+            self.balance += pnl
+
+            self.equity = self.balance
+
+            closed["profit"] = pnl
+
+            finished.append(closed)
+
+        return finished
+
+    # =====================================================
+    # PARTIAL CLOSE
+    # =====================================================
+
+    def partial_close(
+
+        self,
+
+        trade_id,
+
+        percentage=0.5,
+
+    ):
+
+        trade = self.positions.get(trade_id)
+
+        if trade is None:
+
+            return None
+
+        return self.partial.apply(
+
+            trade,
+
+            percentage,
+
+        )
+
+    # =====================================================
+    # MANUAL CLOSE
+    # =====================================================
+
+    def close_trade(
+
+        self,
+
+        trade_id,
+
+        price,
+
+    ):
+
+        trade = self.positions.close(
+
+            trade_id,
+
+            price,
+
+        )
+
+        if trade is None:
+
+            return None
+
+        pnl = trade["profit"] * 100000
+
+        trade["profit"] = pnl
+
+        self.balance += pnl
+
+        self.equity = self.balance
+
+        return trade
+
+    # =====================================================
+    # BALANCE
+    # =====================================================
 
     def get_balance(self):
 
         return self.balance
 
-    # ---------------------------------------------------------
+    # =====================================================
+    # EQUITY
+    # =====================================================
 
     def get_equity(self):
 
         return self.equity
 
-    # ---------------------------------------------------------
+    # =====================================================
+    # OPEN POSITIONS
+    # =====================================================
 
     def get_open_positions(self):
 
-        return self.open_positions
+        return self.positions.open_positions
 
-    # ---------------------------------------------------------
+    # =====================================================
+    # CLOSED POSITIONS
+    # =====================================================
 
     def get_closed_positions(self):
 
-        return self.closed_positions
-        
+        return self.positions.closed_positions
+
+    # =====================================================
+    # STATISTICS
+    # =====================================================
+
+    def statistics(self):
+
+        stats = self.positions.statistics()
+
+        stats["balance"] = self.balance
+
+        stats["equity"] = self.equity
+
+        return stats
+
+    # =====================================================
+    # RESET
+    # =====================================================
+
+    def reset(self):
+
+        self.positions.reset()
+
+        self.balance = self.equity

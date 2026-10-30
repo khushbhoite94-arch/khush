@@ -1,34 +1,77 @@
 """
-AEGIS AI
-ATR Indicator
+AEGIS AI v2
+Average True Range
 """
+
+from __future__ import annotations
 
 
 class ATR:
 
-    def __init__(self, period=14):
+    def __init__(
+
+        self,
+
+        period=14,
+
+    ):
 
         self.period = period
 
-    def calculate(self, highs, lows, closes):
+    # -----------------------------------------------------
 
-        if len(highs) < self.period + 1:
+    def calculate(
+
+        self,
+
+        candles,
+
+    ):
+
+        if candles is None:
+
             return None
 
-        tr = []
+        if len(candles) < self.period + 1:
 
-        for i in range(1, len(highs)):
+            return None
 
-            hl = highs[i] - lows[i]
-            hc = abs(highs[i] - closes[i - 1])
-            lc = abs(lows[i] - closes[i - 1])
+        trs = []
 
-            tr.append(max(hl, hc, lc))
+        for i in range(1, len(candles)):
 
-        atr = sum(tr[:self.period]) / self.period
+            current = candles[i]
 
-        for value in tr[self.period:]:
+            previous = candles[i - 1]
 
-            atr = ((atr * (self.period - 1)) + value) / self.period
+            high = float(current["high"])
 
-        return round(atr, 5)
+            low = float(current["low"])
+
+            prev_close = float(previous["close"])
+
+            tr = max(
+
+                high - low,
+
+                abs(high - prev_close),
+
+                abs(low - prev_close),
+
+            )
+
+            trs.append(tr)
+
+        atr = sum(
+
+            trs[-self.period:]
+
+        ) / self.period
+
+        return round(
+
+            atr,
+
+            6,
+
+        )

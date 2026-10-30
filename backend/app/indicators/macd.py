@@ -1,47 +1,105 @@
 """
-AEGIS AI
-MACD Indicator
+AEGIS AI v2
+Moving Average Convergence Divergence
 """
+
+from __future__ import annotations
 
 from app.indicators.ema import EMA
 
 
 class MACD:
 
-    def __init__(self):
+    def __init__(
 
-        self.fast = EMA(12)
-        self.slow = EMA(26)
+        self,
 
-    def calculate(self, prices):
+        fast=12,
 
-        if len(prices) < 26:
-            return None
+        slow=26,
 
-        fast = self.fast.calculate(prices)
-        slow = self.slow.calculate(prices)
+        signal=9,
 
-        macd = fast - slow
+    ):
 
-        signal_prices = []
+        self.fast = fast
 
-        for i in range(26, len(prices) + 1):
+        self.slow = slow
 
-            f = self.fast.calculate(prices[:i])
-            s = self.slow.calculate(prices[:i])
+        self.signal = signal
 
-            if f is not None and s is not None:
-                signal_prices.append(f - s)
+    # -----------------------------------------------------
 
-        signal = EMA(9).calculate(signal_prices)
+    def calculate(
 
-        histogram = None
+        self,
 
-        if signal is not None:
-            histogram = macd - signal
+        prices,
+
+    ):
+
+        prices = [
+
+            float(x)
+
+            for x in prices
+
+            if x is not None
+
+        ]
+
+        if len(prices) < self.slow + self.signal:
+
+            return {
+
+                "macd": None,
+
+                "signal": None,
+
+                "histogram": None,
+
+            }
+
+        macd_values = []
+
+        for i in range(self.slow, len(prices) + 1):
+
+            subset = prices[:i]
+
+            fast = EMA(self.fast).calculate(subset)
+
+            slow = EMA(self.slow).calculate(subset)
+
+            if fast is None or slow is None:
+
+                continue
+
+            macd_values.append(fast - slow)
+
+        if len(macd_values) < self.signal:
+
+            return {
+
+                "macd": None,
+
+                "signal": None,
+
+                "histogram": None,
+
+            }
+
+        signal_line = EMA(self.signal).calculate(macd_values)
+
+        macd_line = macd_values[-1]
+
+        histogram = macd_line - signal_line
 
         return {
-            "macd": round(macd, 5),
-            "signal": round(signal, 5) if signal is not None else None,
-            "histogram": round(histogram, 5) if histogram is not None else None,
+
+            "macd": round(macd_line, 6),
+
+            "signal": round(signal_line, 6),
+
+            "histogram": round(histogram, 6),
+
         }
