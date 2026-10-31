@@ -7,7 +7,7 @@ Central manager for all open and closed positions.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class PositionManager:
@@ -28,7 +28,7 @@ class PositionManager:
 
         position["status"] = "OPEN"
 
-        position["opened_at"] = datetime.utcnow()
+        position["opened_at"] = datetime.now(timezone.utc)
 
         position["closed_at"] = None
 
@@ -65,7 +65,7 @@ class PositionManager:
 
             position["exit_price"] = exit_price
 
-            position["closed_at"] = datetime.utcnow()
+            position["closed_at"] = datetime.now(timezone.utc)
 
             position["status"] = "CLOSED"
 
@@ -123,13 +123,9 @@ class PositionManager:
 
         return round(
 
-            sum(
+            sum(p.get("partial_profit", 0.0) for p in self.open_positions + self.closed_positions)
 
-                p["profit"]
-
-                for p in self.closed_positions
-
-            ),
+            + sum(p["profit"] for p in self.closed_positions),
 
             5,
 
