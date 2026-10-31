@@ -136,7 +136,7 @@ class AIEngine:
             self.total_predictions += 1
 
             return {
-                "time": datetime.utcnow().isoformat(),
+                "time": datetime.now(timezone.utc).isoformat(),
                 "action": decision.get("action", "WAIT"),
                 "report": report,
                 "strategy": strategy,
@@ -185,10 +185,17 @@ class AIEngine:
 
             symbol = str(trade.get("symbol", "UNKNOWN"))
             target = float(trade.get("take_profit", evaluation["take_profit"]))
+            entry = float(trade["entry"])
+            if not isfinite(target):
+                return {"status": "REJECTED", "reason": "Take-profit must be finite"}
+            if direction == "BUY" and target <= entry:
+                return {"status": "REJECTED", "reason": "BUY take-profit must be above entry"}
+            if direction == "SELL" and target >= entry:
+                return {"status": "REJECTED", "reason": "SELL take-profit must be below entry"}
             args = (
                 symbol,
                 evaluation["lot_size"],
-                float(trade["entry"]),
+                entry,
                 float(trade["stop_loss"]),
                 target,
             )
