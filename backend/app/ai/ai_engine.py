@@ -8,7 +8,7 @@ or analysis errors produce WAIT rather than an executable direction.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from math import isfinite
 from numbers import Real
 
@@ -31,7 +31,7 @@ class AIEngine:
         self.risk_manager = RiskManager()
         self.paper_executor = PaperExecutor(starting_balance=starting_balance)
 
-        self.started = datetime.utcnow()
+        self.started = datetime.now(timezone.utc)
         self.version_number = "3.1"
         self.total_predictions = 0
         self.total_trades = 0
