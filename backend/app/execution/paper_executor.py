@@ -5,7 +5,8 @@ Paper Trading Engine
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
+from math import isfinite
 from uuid import uuid4
 
 from app.execution.position_manager import PositionManager
@@ -78,7 +79,7 @@ class PaperExecutor:
 
             "lot_size": lot,
 
-            "opened_at": datetime.utcnow(),
+            "opened_at": datetime.now(timezone.utc),
 
             "status": "OPEN",
 
@@ -272,6 +273,8 @@ class PaperExecutor:
 
         trade_id,
 
+        current_price,
+
         percentage=0.5,
 
     ):
@@ -282,13 +285,53 @@ class PaperExecutor:
 
             return None
 
-        return self.partial.apply(
+        try:
 
-            trade,
+            current_price = float(current_price)
 
-            percentage,
+            percentage = float(percentage)
+
+        except (TypeError, ValueError):
+
+            return None
+
+        if not isfinite(current_price) or current_price <= 0:
+
+            return None
+
+        if not isfinite(percentage) or not 0 < percentage < 1:
+
+            return None
+
+        closed_size = trade["lot_size"] * percentage
+
+        if trade["direction"] == "BUY":
+
+            raw_profit = (current_price - trade["entry"]) * closed_size
+
+        else:
+
+            raw_profit = (trade["entry"] - current_price) * closed_size
+
+        realized_profit = round(raw_profit * 100000, 2)
+
+        updated = self.partial.apply(trade, percentage)
+
+        updated["partial_profit"] = round(
+
+            updated.get("partial_profit", 0.0) + realized_profit, 2
 
         )
+
+        updated["last_partial_exit_price"] = current_price
+
+        updated["realized_partial_profit"] = realized_profit
+
+        self.balance += realized_profit
+
+        self.equity = self.balance
+
+        return updated
 
     # =====================================================
     # MANUAL CLOSE
