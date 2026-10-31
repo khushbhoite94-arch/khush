@@ -61,4 +61,3 @@ class StrategyEngine:
             }
 
         return max(signals, key=lambda item: item["confidence"])
-}
