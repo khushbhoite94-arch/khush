@@ -4,8 +4,6 @@ TradingView Automation
 
 Part 1/6
 """
-from app.execution.trade_manager import TradeManager
-from app.execution.order_manager import OrderManager
 from __future__ import annotations
 
 import time
