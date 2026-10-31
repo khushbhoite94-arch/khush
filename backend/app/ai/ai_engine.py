@@ -94,25 +94,39 @@ class AIEngine:
             trend_decision = self.decision_engine.decide(candles)
 
             strategy_signal = strategy.get("signal", "WAIT")
+            smart_money_signal = report.get("direction", "WAIT")
             decision_signal = trend_decision.get("action", "WAIT")
 
-            # Two independent layers must agree. A strategy signal alone is
-            # not sufficient authorization to trade.
-            if strategy_signal not in ("BUY", "SELL") or strategy_signal != decision_signal:
+            # Require agreement across independently produced strategy and
+            # smart-money directions, plus the decision engine's trade gate.
+            signals = (strategy_signal, smart_money_signal, decision_signal)
+            if not all(signal in ("BUY", "SELL") for signal in signals) or len(set(signals)) != 1:
                 decision = {
                     "action": "WAIT",
                     "reason": "NO_AGREEMENT",
                     "strategy_signal": strategy_signal,
+                    "smart_money_signal": smart_money_signal,
                     "analysis_signal": decision_signal,
                 }
             else:
                 decision = trend_decision
 
-            confidence = self.confidence_engine.calculate([{
-                "engine": "smart_money",
-                "signal": decision.get("action", "WAIT"),
-                "confidence": report.get("confidence", 0) if decision.get("action") != "WAIT" else 0,
-            }])
+            # Confidence is calculated from the actual strategy and
+            # smart-money outputs. Never feed the final decision back as a vote.
+            confidence = self.confidence_engine.calculate([
+                {
+                    "engine": "smart_money",
+                    "signal": smart_money_signal,
+                    "confidence": report.get("confidence", 0),
+                },
+                {
+                    "engine": "strategy",
+                    "signal": strategy_signal,
+                    "confidence": strategy.get("confidence", 0),
+                },
+            ])
+            if decision.get("action") == "WAIT":
+                confidence["signal"] = "WAIT"
 
             self.last_report = report
             self.last_strategy = strategy
