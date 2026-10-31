@@ -83,3 +83,16 @@ def test_process_waits_when_signals_conflict():
 
     assert result["action"] == "WAIT"
     assert result["decision"]["reason"] == "NO_AGREEMENT"
+
+
+def test_paper_trade_rejects_stop_loss_on_wrong_side():
+    engine = AIEngine()
+    result = engine.paper_trade({
+        "direction": "BUY",
+        "entry": 100.0,
+        "stop_loss": 101.0,
+        "take_profit": 103.0,
+    })
+    assert result["status"] == "REJECTED"
+    assert "wrong side" in result["reason"]
+    assert engine.total_trades == 0
