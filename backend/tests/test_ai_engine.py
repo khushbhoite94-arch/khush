@@ -120,3 +120,34 @@ def test_paper_executor_manual_close_pnl_matches_contract_multiplier():
     assert closed["profit"] == 100.0
     assert engine.paper_executor.get_balance() == 10100.0
     assert engine.paper_executor.statistics()["closed_positions"] == 1
+
+
+
+def test_partial_close_realizes_pnl_and_final_close_preserves_total():
+    engine = AIEngine(starting_balance=10000.0)
+    opened = engine.paper_executor.buy("TEST", 0.001, 100.0, 99.0, 103.0)
+
+    partial = engine.paper_executor.partial_close(
+        opened["id"], current_price=101.0, percentage=0.5
+    )
+
+    assert partial["lot_size"] == 0.0005
+    assert partial["realized_partial_profit"] == 50.0
+    assert engine.paper_executor.get_balance() == 10050.0
+    assert engine.paper_executor.statistics()["realized_profit"] == 50.0
+
+    closed = engine.paper_executor.close_trade(opened["id"], 102.0)
+
+    assert closed["profit"] == 100.0
+    assert engine.paper_executor.get_balance() == 10150.0
+    assert engine.paper_executor.statistics()["realized_profit"] == 150.0
+
+
+def test_partial_close_rejects_invalid_price_or_percentage():
+    engine = AIEngine()
+    opened = engine.paper_executor.buy("TEST", 0.001, 100.0, 99.0, 103.0)
+
+    assert engine.paper_executor.partial_close(opened["id"], 0, 0.5) is None
+    assert engine.paper_executor.partial_close(opened["id"], 101, 1.0) is None
+    assert engine.paper_executor.get_balance() == 10000.0
+    assert opened["lot_size"] == 0.001
