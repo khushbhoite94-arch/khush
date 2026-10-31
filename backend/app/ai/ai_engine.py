@@ -1,364 +1,218 @@
 """
 AEGIS AI v3
-Institutional AI Engine
+Main analysis and paper-trading orchestration.
+
+The engine is deliberately fail-closed: invalid data, conflicting signals,
+or analysis errors produce WAIT rather than an executable direction.
 """
 
 from __future__ import annotations
+
 from datetime import datetime
+from math import isfinite
+from numbers import Real
+
 from app.analytics.smart_money_engine import SmartMoneyEngine
 from app.analytics.statistics import Statistics
 from app.ai.decision_engine import DecisionEngine
 from app.ai.confidence import Confidence
 from app.strategy.startegy_engine import StrategyEngine
 from app.risk.risk_manager import RiskManager
-from app.execution.trade_manager import TradeManager
+from app.execution.paper_executor import PaperExecutor
 
 
 class AIEngine:
-
-    # =====================================================
-    # INIT
-    # =====================================================
-
-    def __init__(self):
-
+    def __init__(self, starting_balance: float = 10000.0):
         self.smart_money = SmartMoneyEngine()
-
-        self.statistics = Statistics()
-
+        self.statistics_engine = Statistics()
         self.decision_engine = DecisionEngine()
-
-        self.confidence = Confidence()
-
-        self.startegy_engine = StrategyEngine()
-
+        self.confidence_engine = Confidence()
+        self.strategy_engine = StrategyEngine()
         self.risk_manager = RiskManager()
-
-        self.trade_manager = TradeManager()
+        self.paper_executor = PaperExecutor(starting_balance=starting_balance)
 
         self.started = datetime.utcnow()
-
+        self.version_number = "3.1"
         self.total_predictions = 0
-
         self.total_trades = 0
-
-        self.version_number = "3.0"
-
         self.last_report = None
-
         self.last_decision = None
-            # =====================================================
-    # RESET
-    # =====================================================
+        self.last_strategy = None
+        self.last_candles = None
+        self.last_error = None
 
     def reset(self):
-
-        self.trade_manager.reset()
-
+        self.paper_executor.reset()
+        self.risk_manager.reset_day()
         self.total_predictions = 0
-
         self.total_trades = 0
-
         self.last_report = None
-
         self.last_decision = None
-
-    # =====================================================
-    # HEALTH
-    # =====================================================
+        self.last_strategy = None
+        self.last_candles = None
+        self.last_error = None
 
     def health(self):
-
         return {
-
             "status": "RUNNING",
-
             "version": self.version_number,
-
             "started": self.started.isoformat(),
-
             "predictions": self.total_predictions,
-
             "trades": self.total_trades,
-
+            "execution_mode": "PAPER_ONLY",
+            "last_error": self.last_error,
         }
 
-    # =====================================================
-    # VALIDATE
-    # =====================================================
-
-    def validate(
-
-        self,
-
-        candles,
-
-    ):
-
-        if candles is None:
-
+    @staticmethod
+    def validate(candles):
+        if not isinstance(candles, (list, tuple)) or len(candles) < 50:
             return False
 
-        if len(candles) < 30:
-
-            return False
-
+        required = ("open", "high", "low", "close")
+        for candle in candles:
+            if not isinstance(candle, dict):
+                return False
+            values = [candle.get(key) for key in required]
+            if any(not isinstance(value, Real) or not isfinite(float(value)) for value in values):
+                return False
+            open_price, high, low, close = map(float, values)
+            if low <= 0 or high < low or high < max(open_price, close) or low > min(open_price, close):
+                return False
         return True
-             # =====================================================
-    # PROCESS
-    # =====================================================
 
-    def process(
+    def process(self, candles):
+        if not self.validate(candles):
+            self.last_error = "Invalid candles: expected at least 50 valid OHLC records"
+            decision = {"action": "WAIT", "reason": self.last_error}
+            self.last_decision = decision
+            return {"decision": decision, "action": "WAIT", "reason": self.last_error}
 
-        self,
+        try:
+            closes = [float(candle["close"]) for candle in candles]
+            report = self.smart_money.analyze(candles)
+            strategy = self.strategy_engine.calculate(closes, candles)
+            trend_decision = self.decision_engine.decide(candles)
 
-        candles,
+            strategy_signal = strategy.get("signal", "WAIT")
+            decision_signal = trend_decision.get("action", "WAIT")
 
-    ):
+            # Two independent layers must agree. A strategy signal alone is
+            # not sufficient authorization to trade.
+            if strategy_signal not in ("BUY", "SELL") or strategy_signal != decision_signal:
+                decision = {
+                    "action": "WAIT",
+                    "reason": "NO_AGREEMENT",
+                    "strategy_signal": strategy_signal,
+                    "analysis_signal": decision_signal,
+                }
+            else:
+                decision = trend_decision
 
-        if not self.validate(
+            confidence = self.confidence_engine.calculate([{
+                "engine": "smart_money",
+                "signal": decision.get("action", "WAIT"),
+                "confidence": report.get("confidence", 0) if decision.get("action") != "WAIT" else 0,
+            }])
 
-            candles,
-
-        ):
+            self.last_report = report
+            self.last_strategy = strategy
+            self.last_decision = decision
+            self.last_candles = list(candles)
+            self.last_error = None
+            self.total_predictions += 1
 
             return {
-
-                "action": "WAIT",
-
-                "reason": "Not enough candles",
-
+                "time": datetime.utcnow().isoformat(),
+                "action": decision.get("action", "WAIT"),
+                "report": report,
+                "strategy": strategy,
+                "decision": decision,
+                "confidence": confidence,
+                "statistics": self.statistics_engine.analyze(candles),
             }
+        except Exception as exc:
+            self.last_error = f"{type(exc).__name__}: {exc}"
+            decision = {"action": "WAIT", "reason": "ANALYSIS_ERROR"}
+            self.last_decision = decision
+            return {"action": "WAIT", "decision": decision, "reason": "ANALYSIS_ERROR"}
 
-        # ----------------------------------------------
-
-        report = self.smart_money.analyze(
-
-            candles,
-
-        )
-
-        self.last_report = report
-
-        # ----------------------------------------------
-
-        strategy = self.strategy_engine.analyze(
-
-            report,
-
-        )
-
-        # ----------------------------------------------
-
-        decision = self.decision_engine.decide(
-
-            report,
-
-            strategy,
-
-        )
-
-        self.last_decision = decision
-
-        self.total_predictions += 1
-
-        # ----------------------------------------------
-
-        confidence = self.confidence.calculate(
-
-            [
-
-                {
-
-                    "signal": decision["action"],
-
-                    "confidence": report["confidence"],
-
-                }
-
-            ]
-
-        )
-
-        # ----------------------------------------------
-
-        result = {
-
-            "time": datetime.utcnow().isoformat(),
-
-            "report": report,
-
-            "strategy": strategy,
-
-            "decision": decision,
-
-            "confidence": confidence,
-
-            "statistics": self.statistics.summary(),
-
-        }
-
-        return result
-        # =====================================================
-    # LAST REPORT
-    # =====================================================
-
-    def last_analysis(
-
-        self,
-
-    ):
-
+    def last_analysis(self):
         return self.last_report
 
-    # =====================================================
-    # LAST DECISION
-    # =====================================================
-
-    def last_trade(
-
-        self,
-
-    ):
-
+    def last_trade(self):
         return self.last_decision
-        # =====================================================
-    # PAPER TRADE
-    # =====================================================
 
     def paper_trade(
-
         self,
-
         trade,
-
-        current_positions=0,
-
-        daily_loss=0,
-
-        peak_balance=10000,
-
+        current_positions=None,
+        daily_loss=None,
+        peak_balance=None,
     ):
+        if not isinstance(trade, dict):
+            return {"status": "REJECTED", "reason": "Trade must be a dictionary"}
 
-        approved = self.risk_manager.safe_trade(
+        direction = trade.get("direction")
+        if direction not in ("BUY", "SELL"):
+            return {"status": "REJECTED", "reason": "Invalid direction"}
 
-            trade,
+        try:
+            balance = self.paper_executor.get_balance()
+            open_count = len(self.paper_executor.get_open_positions())
+            evaluation = self.risk_manager.evaluate(
+                balance=balance,
+                entry=float(trade["entry"]),
+                stop_loss=float(trade["stop_loss"]),
+                side=direction,
+                open_positions=open_count,
+            )
+            if not evaluation.get("allowed") or evaluation.get("lot_size", 0) <= 0:
+                return {"status": "REJECTED", "reason": evaluation.get("reason", "Risk check failed")}
 
-            current_positions,
+            symbol = str(trade.get("symbol", "UNKNOWN"))
+            target = float(trade.get("take_profit", evaluation["take_profit"]))
+            args = (
+                symbol,
+                evaluation["lot_size"],
+                float(trade["entry"]),
+                float(trade["stop_loss"]),
+                target,
+            )
+            opened = self.paper_executor.buy(*args) if direction == "BUY" else self.paper_executor.sell(*args)
+            self.total_trades += 1
+            return {"status": "OPENED", "trade": opened, "risk": evaluation}
+        except (KeyError, TypeError, ValueError) as exc:
+            return {"status": "REJECTED", "reason": str(exc)}
 
-            daily_loss,
+    def close_trade(self, trade, price):
+        trade_id = trade.get("id") if isinstance(trade, dict) else trade
+        try:
+            return self.paper_executor.close_trade(trade_id, float(price))
+        except (TypeError, ValueError):
+            return None
 
-            peak_balance,
+    def update(self, price):
+        try:
+            return self.paper_executor.update(float(price))
+        except (TypeError, ValueError):
+            return []
 
-        )
-
-        if not approved:
-
-            return {
-
-                "status": "REJECTED",
-
-                "trade": trade,
-
-            }
-
-        opened = self.trade_manager.open_trade(
-
-            trade,
-
-        )
-
-        self.total_trades += 1
-
+    def statistics(self):
         return {
-
-            "status": "OPENED",
-
-            "trade": opened,
-
-        }
-
-    # =====================================================
-    # CLOSE TRADE
-    # =====================================================
-
-    def close_trade(
-
-        self,
-
-        trade,
-
-        price,
-
-    ):
-
-        closed = self.trade_manager.close_trade(
-
-            trade,
-
-            price,
-
-        )
-
-        return closed
-
-    # =====================================================
-    # UPDATE LIVE PRICE
-    # =====================================================
-
-    def update(
-
-        self,
-
-        price,
-
-    ):
-
-        return self.trade_manager.update(
-
-            price,
-
-        )
-        # =====================================================
-    # STATISTICS
-    # =====================================================
-
-    def statistics(
-
-        self,
-
-    ):
-
-        return {
-
             "predictions": self.total_predictions,
-
-            "trades": self.total_trades,
-
-            "performance": self.trade_manager.statistics(),
-
+            "trades_opened": self.total_trades,
+            "paper_execution": self.paper_executor.statistics(),
         }
 
-    # =====================================================
-    # DASHBOARD
-    # =====================================================
-
-    def dashboard(
-
-        self,
-
-    ):
-
+    def dashboard(self):
         return {
-
             "health": self.health(),
-
-            "statistics": self.statistics.analyze(
-            candles,
-    ),
-
+            "statistics": self.statistics(),
+            "market_statistics": (
+                self.statistics_engine.analyze(self.last_candles)
+                if self.last_candles else None
+            ),
             "last_report": self.last_report,
-
+            "last_strategy": self.last_strategy,
             "last_decision": self.last_decision,
-
         }
