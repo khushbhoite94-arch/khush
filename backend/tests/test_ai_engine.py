@@ -96,3 +96,27 @@ def test_paper_trade_rejects_stop_loss_on_wrong_side():
     assert result["status"] == "REJECTED"
     assert "wrong side" in result["reason"]
     assert engine.total_trades == 0
+
+
+
+def test_paper_trade_rejects_take_profit_on_wrong_side():
+    engine = AIEngine()
+    result = engine.paper_trade({
+        "direction": "BUY",
+        "entry": 100.0,
+        "stop_loss": 99.0,
+        "take_profit": 99.5,
+    })
+    assert result["status"] == "REJECTED"
+    assert "take-profit" in result["reason"]
+    assert engine.total_trades == 0
+
+
+def test_paper_executor_manual_close_pnl_matches_contract_multiplier():
+    engine = AIEngine(starting_balance=10000.0)
+    opened = engine.paper_executor.buy("TEST", 0.001, 100.0, 99.0, 102.0)
+    closed = engine.paper_executor.close_trade(opened["id"], 101.0)
+
+    assert closed["profit"] == 100.0
+    assert engine.paper_executor.get_balance() == 10100.0
+    assert engine.paper_executor.statistics()["closed_positions"] == 1
